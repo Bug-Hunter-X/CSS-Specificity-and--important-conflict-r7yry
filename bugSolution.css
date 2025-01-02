@@ -1,0 +1,22 @@
+The issue can be resolved by restructuring the CSS to rely less on `!important`. Instead of using `!important`, we leverage specificity to achieve the desired styling:
+
+```css
+.parent {
+  color: blue;
+}
+
+.child {
+  color: red;
+}
+
+.parent .child {
+  color: green;
+}
+
+/* Alternatively, for better readability and maintainability, use a more specific class name */
+.parent .child-green {
+  color: green;
+}
+```
+
+This version achieves the same visual result without the `!important` declaration, making the CSS more predictable and maintainable.
